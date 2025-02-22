@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h2>Masukkan Tanggal Lahir</h2>
+        <input type="date" id="dob">
+        <button onclick="checkLogin()">Login</button>
+        <p id="error" style="color: red;" class="hidden">Tanggal lahir salah!</p>
+    </div>
+    
+    <div id="content" class="hidden">
+        <h1>Selamat Ulang Tahun, Salsa!</h1>
+        <p>Semoga di hari spesial ini, kamu selalu bahagia dan diberi kelancaran dalam segala hal.</p>
+        <p><i>Puisi tentang kamu akan ditampilkan di sini...</i></p>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const dob = document.getElementById("dob").value;
+            if (dob === "2006-03-03") {
+                document.getElementById("login").classList.add("hidden");
+                document.getElementById("content").classList.remove("hidden");
+            } else {
+                document.getElementById("error").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
